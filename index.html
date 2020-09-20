@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inception</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media queries max 992px.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
@@ -12,7 +13,7 @@
     
     <section id="home">
         <header><img src="img/logo.png" class="logo" alt="logo"></header>
-        <nav>
+        <nav id="navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About us</a></li>
@@ -20,14 +21,30 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
- 
-    <i class="fas fa-angle-double-down"></i>
     </section>
 
     <section id="about">
         <h2>About us</h2>
         <span>Pellentesque eleifend malesuada libero, vel commodo neque fringilla ut. Donec porttitor mauris arcu, iaculis gravida libero cursus ac. Proin convallis ante et tincidunt rutrum. Suspendisse sem diam, pellentesque eu nulla mattis, dignissim cursus sem. Vivamus eu metus auctor, luctus orci et, tempus libero.</span>
-        <button>Read more</button>
+        <button onclick="show()">Read more</button>
+
+        <div id="hidden">
+            <video id="CameraVideo" width="80%" height="auto" autoplay>
+                <source src="video/2 about hidden div.mp4" type="video/mp4">
+            </video>
+            <div class="buttons">
+                <button class="startv" onclick="playVid()">Start video</button>
+                <button class="stopv" onclick="pauseVid()">Stop video</button>
+            </div>
+            <div class="skills">
+                <i class="far fa-star"></i> <span>Nunc molestie, nisi at blandit tristique, justo leo volutpat lorem, ut varius leo purus quis augue. In sed sodales risus. Praesent tristique interdum luctus. Fusce porta quis quam a ultricies. Nullam non orci a nibh ullamcorper cursus.</span>
+                <i class="far fa-star"></i> <span>Nam mollis est a ante ultrices, eget maximus odio malesuada. Pellentesque posuere orci tellus, non finibus leo facilisis vel. Aliquam sed velit pharetra, dignissim odio quis, elementum orci.</span>
+                <i class="far fa-star"></i> <span>Duis mauris orci, finibus id luctus id, rutrum ac quam. Donec id arcu finibus erat consectetur pharetra nec eget mauris.  Cras tincidunt id neque nec gravida.</span>
+                <i class="far fa-star"></i> <span>Interdum et malesuada fames ac ante ipsum primis in faucibus. In tincidunt mi sed nulla consectetur, ac ultrices metus sodales. Donec vitae mauris vestibulum.</span>
+                <i class="far fa-star"></i> <span>Praesent venenatis id magna nec pharetra. Aenean suscipit et mi non pellentesque.</span>
+            </div>
+            <button id="btnBack" onclick="window.location.href='index.html'">Go back</button>
+        </div>
     </section>
 
     <section id="services">
@@ -108,13 +125,10 @@
             <input type="text" id="name" name="firstname" placeholder="Your name">
             <input type="email" id="email" name="email" placeholder="Email">
             <input type="text" id="message" name="message" placeholder="Your message">
-            <button type="submit">Send</button>
+            <input type="submit" value="Send"/>
           </form>
     </footer>
 
-    <div class="autor">
-        <span>Design and created by Malgorzata Jaskiewicz</span>
-    </div>
-
 </body>
+<script src="js/script.js"></script>
 </html>

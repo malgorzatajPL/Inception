@@ -49,6 +49,25 @@ body{
     border-bottom: 2px solid #5023b0;
 }
 
+@keyframes fade{
+from{opacity: 0;}
+to{opacity: 1;}
+}
+
+#home .sticky {
+    position: fixed;
+    top:0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(68, 68, 68, 0.7);
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  #home .sticky a{
+      color: #fff;
+  }
 #home i.fas{
     font-size: 50px;
     right: 50px;
@@ -76,7 +95,7 @@ body{
     margin-bottom: 25px;
 }
 
-#about button{
+ button{
     height: 50px;
     width: 130px;
     padding: 12px;
@@ -87,6 +106,37 @@ body{
     font-size: 16px;
 }
 
+#about #hidden{
+   display: none;
+   margin-top: 200px;
+   margin-top: 200px;
+}
+
+#about #hidden video{
+    margin-bottom: 50px;
+}
+
+#about #hidden .buttons{
+    margin-bottom: 30px;
+    padding: 10px;
+    align-items: center;
+}
+
+#about #hidden .skills{
+    text-align: center;
+    display: grid;
+}
+
+#about #hidden .skills .far{
+    color: #5023b0;
+    font-size: 30px;
+    margin: 5px;
+}
+
+#about #hidden .skills span{
+    font-size: 18px;
+    line-height: 1.5;
+}
 #services{
     background-color: #eee;
     padding-bottom: 100px;
@@ -161,7 +211,7 @@ footer .name{
 }
 
 footer .social{
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: 400;
     text-align: center;
     letter-spacing: 2px;
@@ -175,7 +225,7 @@ footer i.fab{
 
 footer form h5{
     padding: 50px;
-    font-size: 34px;
+    font-size: 30px;
 }
 footer form{
     width: 50%;
@@ -202,7 +252,7 @@ footer textarea:focus, input:focus{
     background-color: rgba(255, 255, 255, 1);
 }
 
-footer form button{
+input[type=submit]{
     padding: 14px;
     font-size: 16px;
     letter-spacing: 2px;
@@ -210,12 +260,4 @@ footer form button{
     text-transform: uppercase;
     font-weight: 600;
     margin: 20px;
-}
-.autor{
-    background-color: royalblue;
-    font-size: 2em;
-    letter-spacing: 1px;
-    font-weight: 600;
-    text-align: center;
-    padding: 30px;
 }
