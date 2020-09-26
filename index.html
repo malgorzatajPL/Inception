@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inception</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media queries max 992px.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sass/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
 <body>
     
     <section id="home">
         <header><img src="img/logo.png" class="logo" alt="logo"></header>
+        <button class="menu-toggle"></button>
         <nav id="navigation">
-            <ul>
+            <ul class="menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About us</a></li>
                 <li><a href="#services">Services</a></li>
@@ -26,11 +25,12 @@
     <section id="about">
         <h2>About us</h2>
         <span>Pellentesque eleifend malesuada libero, vel commodo neque fringilla ut. Donec porttitor mauris arcu, iaculis gravida libero cursus ac. Proin convallis ante et tincidunt rutrum. Suspendisse sem diam, pellentesque eu nulla mattis, dignissim cursus sem. Vivamus eu metus auctor, luctus orci et, tempus libero.</span>
-        <button onclick="show()">Read more</button>
+        <button class="showHidden" onclick="show()">Read more</button>
 
         <div id="hidden">
             <video id="CameraVideo" width="80%" height="auto" autoplay>
                 <source src="video/2 about hidden div.mp4" type="video/mp4">
+                <source src="video/2 about hidden div - firefox.webm" type="video/webm">
             </video>
             <div class="buttons">
                 <button class="startv" onclick="playVid()">Start video</button>
@@ -49,22 +49,22 @@
 
     <section id="services">
         <div class="portfolio">
-        <img src="img/3 services1.jpg" alt="">
-        <img src="img/3 services2.jpg" alt="">
-        <img src="img/3 services3.jpg" alt="">
-        <img src="img/3 services4.jpg" alt="">
-        <img src="img/3 services5.jpg" alt="">
-        <img src="img/3 services6.jpg" alt="">
-        <img src="img/3 services7.jpg" alt="">
-        <img src="img/3 services8.jpg" alt="">
-    </div>
+            <img src="img/3 services1.jpg" alt="">
+            <img src="img/3 services2.jpg" alt="">
+            <img src="img/3 services3.jpg" alt="">
+            <img src="img/3 services4.jpg" alt="">
+            <img src="img/3 services5.jpg" alt="">
+            <img src="img/3 services6.jpg" alt="">
+            <img src="img/3 services7.jpg" alt="">
+            <img src="img/3 services8.jpg" alt="">
+        </div>
     <div class="services-description">
         <div class="projects-grid">
             <img src="img/3 presentation.png" alt="">
-                <div class="content">     
-                    <h4>Nulla facilisi</h4>
-                    <span>Donec cursus dapibus urna, non auctor est congue quis. Sed tempus quam dignissim, ullamcorper dui consequat, consectetur erat.</span>
-                </div>
+            <div class="content">     
+                <h4>Nulla facilisi</h4>
+                <span>Donec cursus dapibus urna, non auctor est congue quis. Sed tempus quam dignissim, ullamcorper dui consequat, consectetur erat.</span>
+            </div>
         </div>
         <div class="projects-grid">
             <img src="img/3 users.png" alt="">
@@ -130,5 +130,6 @@
     </footer>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
 </html>

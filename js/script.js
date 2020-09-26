@@ -1,16 +1,27 @@
-window.onscroll = function() {stickyNav()};
+const smallDevice = window.matchMedia("(max-width: 768px)");
 
-var nav = document.getElementById("navigation");
-var sticky = nav.offsetTop;
+smallDevice.addListener(changeMenu);
+function changeMenu(e) {
+    if (e.matches){
 
-function stickyNav() {
-  if (window.pageYOffset > sticky) {
-    nav.classList.add("sticky");
-  } else {
-    nav.classList.remove("sticky");
-  }
-}
+$('button').on('click', function(){
+            $('body').toggleClass('open');
+        });
+    }
+  else{
+        window.onscroll = function() {stickyNav()};
 
+        var nav = document.getElementById("navigation");
+        var sticky = nav.offsetTop;
+        
+        function stickyNav() {
+          if (window.pageYOffset > sticky) {
+            nav.classList.add("sticky");
+          } else {
+            nav.classList.remove("sticky");
+          }
+        }
+  }}
 
 var vid = document.getElementById("CameraVideo"); 
 
@@ -36,4 +47,4 @@ function show() {
  goBack.addEventListener('click', function(event) {
     window.location.href='index.html';
   });
-
+  

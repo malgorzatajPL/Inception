@@ -24,10 +24,15 @@ body{
     margin-left: 50px;
 }
 
+.menu-toggle{
+    background-color: transparent;
+}
+
 #home nav{
     display: flex;
     justify-content: flex-end;
-    padding: 30px;
+    padding: 10px 15px 25px 10px;
+    width: auto;
 }
 
 #home nav ul{
@@ -37,7 +42,7 @@ body{
 }
 
 #home nav a{
-    margin-left: 40px;
+    margin-left: 50px;
     text-decoration:none;
     color: #000;
     font-weight: 400;
@@ -45,22 +50,22 @@ body{
 }
 
 #home nav a:hover{
-    color: #5023b0;
-    border-bottom: 2px solid #5023b0;
+    border-bottom: 2px solid #c1aaf1;
 }
 
-@keyframes fade{
-from{opacity: 0;}
-to{opacity: 1;}
+@keyframes fadeIn{
+from{background-color: rgba(68, 68, 68, 0);}
+to{background-color: rgba(68, 68, 68, 0.8);}
 }
 
 #home .sticky {
     position: fixed;
+    width: auto;
     top:0;
     right: 0;
     z-index: 1;
-    background-color: rgba(68, 68, 68, 0.7);
-    animation-name: fade;
+    background-color: rgba(68, 68, 68, 0.8);
+    animation-name: fadeIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
   }
@@ -95,7 +100,7 @@ to{opacity: 1;}
     margin-bottom: 25px;
 }
 
- button{
+ button.showHidden, button.startv, button.stopv, button#btnBack{
     height: 50px;
     width: 130px;
     padding: 12px;
@@ -109,22 +114,21 @@ to{opacity: 1;}
 #about #hidden{
    display: none;
    margin-top: 200px;
-   margin-top: 200px;
 }
 
 #about #hidden video{
     margin-bottom: 50px;
 }
 
-#about #hidden .buttons{
+#about #hidden button.startv button.stopv{
     margin-bottom: 30px;
     padding: 10px;
     align-items: center;
 }
 
 #about #hidden .skills{
-    text-align: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 
 #about #hidden .skills .far{
@@ -167,7 +171,6 @@ to{opacity: 1;}
 
 #services .services-description .projects-grid img{
     height: 100px;
-    width: 100px;
     padding: 20px;
     align-self: center;
 }
@@ -191,7 +194,6 @@ to{opacity: 1;}
 }
 
 footer{
-    height: 500px;
     display: flex;
     color: #fff;
     background-color: #444444;
@@ -200,7 +202,11 @@ footer{
 footer .contact-details{
     width: 50%;
     display: grid;
-    padding: 30px;
+    padding: 10px;
+}
+
+footer .contact-details img{
+    width: 150px;
 }
 
 footer .name{
@@ -211,7 +217,8 @@ footer .name{
 }
 
 footer .social{
-    font-size: 1.6em;
+    margin-top: 30px;
+    font-size: 1.4em;
     font-weight: 400;
     text-align: center;
     letter-spacing: 2px;
