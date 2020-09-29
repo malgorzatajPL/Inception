@@ -1,16 +1,12 @@
 @mixin button {
-    height: 50px;
+    height: 60px;
     width: 130px;
-    padding: 12px;
     color: #fff;
     text-align: center;
     background-color: #5023b0;
     border: none;
     font-size: 16px;
+    margin: 50px;
+    padding: 20px;
+    align-items: center;
 }
-
-@mixin position-center {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    margin: auto;
-  }

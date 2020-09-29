@@ -1,27 +1,11 @@
-const smallDevice = window.matchMedia("(max-width: 768px)");
-
-smallDevice.addListener(changeMenu);
-function changeMenu(e) {
-    if (e.matches){
-
-$('button').on('click', function(){
-            $('body').toggleClass('open');
-        });
-    }
-  else{
-        window.onscroll = function() {stickyNav()};
-
-        var nav = document.getElementById("navigation");
-        var sticky = nav.offsetTop;
-        
-        function stickyNav() {
-          if (window.pageYOffset > sticky) {
-            nav.classList.add("sticky");
-          } else {
-            nav.classList.remove("sticky");
-          }
-        }
-  }}
+$(window).scroll(function(){
+  var scroll = $(window).scrollTop();
+  if (scroll > 0){
+    $("header").addClass('scrolled');
+  } else{
+    $("header").removeClass('scrolled');
+  }
+})
 
 var vid = document.getElementById("CameraVideo"); 
 
