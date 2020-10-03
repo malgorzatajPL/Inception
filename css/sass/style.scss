@@ -1,11 +1,21 @@
 @import "mixin.scss";
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import 'include-media';
+@import 'include-media-export';
+
+ 
+
+$breakpoints: (
+  'phone': 320px,
+  'tablet': 768px,
+  'desktop': 1024px
+) !default;
 
 *{
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
+
 
 body{
     font-family: 'Quicksand', sans-serif;
@@ -17,10 +27,11 @@ body{
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh;
-        width: 100%;
         background: #000;
         transition: 1s;
+        @include media('<=tablet') {
+            max-width: 768px;
+        }
         img.banner {
             object-fit: cover;
             position: absolute;
@@ -36,6 +47,12 @@ body{
             padding: 10px;
             height: 80px;
             background-color: #fff;
+            @include media('<=tablet') {
+                height: 60px;
+            }
+            @include media('<=phone') {
+                display: none;
+            }
         }
         ul{
             padding: 40px 0;
@@ -52,6 +69,10 @@ body{
                     text-decoration: none;
                     transition: 1s;
                     font-size: 20px;
+                    @include media('<=phone') {
+                        font-size: 16px;
+                        padding: 10px;
+                    }
                     &:hover {
                         border-bottom: 2px solid white;
                     }
@@ -64,7 +85,10 @@ body{
         }
     }    
     header.scrolled {
-	    height: 100px;
+        height: 100px;
+        @include media('<=tablet') {
+         height: 80px;   
+        }
 	    img.banner {
 		    opacity: 0;
 	    }
@@ -76,6 +100,9 @@ body{
             position: relative;
             float: right;
             margin-right: 50px;
+            @include media('<=phone') {
+                margin: 0;
+            }
                 ul {
                     opacity: 1;
                     visibility: visible;
@@ -96,25 +123,36 @@ body{
         justify-items: center;
         font-size: 18px;
         line-height: 1.6;
-    @media only screen and (max-width: 1200px){
-        padding: 70px;
-    }    
-    @media only screen and (max-width: 992px){
-        padding: 40px;
-    }
-    #h2{
+        @include media('<=desktop') {
+            padding: 60px;
+        }
+        @include media('<=phone') {
+            padding: 0;    
+        }
+        #h2{
             font-size: 34px;
             font-weight: 700;
             margin-bottom: 30px;
+            @include media('<=phone') {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
         }
         span{
             font-size: 18px;
             line-height: 1.4;
             padding: 20px;
             margin-bottom: 25px;
+            @include media('<=phone') {
+                font-size: 16px;
+                padding: 10px;  
+            }
         }
         .showHidden{
             @include button;
+            @include media('<=desktop') {
+                margin: 0;
+            }
         }
     }
     #hidden{
@@ -123,8 +161,15 @@ body{
         justify-items: center;
         display: none;
         margin-top: 20px;
+        @include media('<=desktop') {
+            padding: 20px;   
+        }
         video{
             margin-bottom: 50px;
+            @include media('<=phone') {
+                margin: 0;
+                width: 100%;
+            }
         }
         button.startv, button.stopv{
             @include button;
@@ -140,9 +185,10 @@ body{
         span{
             font-size: 18px;
             line-height: 1.5;
-        @media only screen and (max-width: 992px){
-            font-size: 16px;
-            line-height: 1.4;
+            @include media('<=desktop') {
+                padding: 40px;
+                font-size: 16px;
+                line-height: 1.4;
         }
         }
     }
@@ -161,6 +207,9 @@ body{
         img{
             height: auto;
             width: 25%;
+        @include media('<=phone') {
+            width: 50%;       
+        }
         }
     }
     .services-description{
@@ -172,27 +221,24 @@ body{
             margin: 20px;
             display: flex;
             background-color: #fff;
-            @media only screen and (max-width: 1200px){
+            @include media('<=desktop') {
                 width: 300px;
-                margin: 10px;
-            }    
-            @media only screen and (max-width: 992px){
-                width: 280px;
-                margin: 10px;
-                text-align: center;
-                display: block;
             }
             img{
                 height: 100px;
                 padding: 20px;
                 align-self: center;
-                @media only screen and (max-width: 992px){
-                    height: 80px;
-                }  
+                @include media('<=desktop') {
+                    height: 70px;
+                    padding: 10px;
+                } 
             }
             .content{
                 padding: 30px;
                 text-align: center;
+                @include media('<=desktop') {
+                    padding: 20px;
+                }
                 h4{
                     height: 50px;
                     color: #5023b0;
@@ -212,33 +258,45 @@ footer{
         display: flex;
         color: #fff;
         background-color: #444444;
-        @media only screen and (max-width: 992px){
+        @include media('<=desktop') {
             height: auto;
         }
-        @media only screen and (max-width: 768px){
+        @include media('<=tablet') {
             display: block;
         }    
     .contact-details{
         width: 50%;
         display: grid;
         padding: 10px;
-        @media only screen and (max-width: 768px){
+        @include media('<=tablet') {
             width: 100%;
-            margin: 0 5px;
-        }        
+        }
+        @include media('<=phone') {
+            padding: 0;       
+        }       
         .name{
             align-self: baseline;
             font-size: 18px;
             line-height: 1.5;
             margin-left: 40px;
-            @media only screen and (max-width: 992px){
+        @include media('<=desktop') {
             font-size: 16px;
             line-height: 1.4;
             padding: 40px;
-            }
-            img{
+        }
+        @include media('<=tablet') {
+            margin: 0;
+        }
+        @include media('<=phone') {
+            font-size: 14px;       
+        }
+        img{
                 width: 150px;
                 padding: 40px;
+            @include media('<=phone') {
+                padding: 20px;
+                width: 130px;
+            }
             }
         }
         .social{
@@ -247,10 +305,18 @@ footer{
             font-weight: 400;
             text-align: center;
             letter-spacing: 1px;
+        @include media('<=phone') {
+            font-size: 1em;
+            margin-top: 50px; 
+            letter-spacing: 0;      
+        }
             .fab{
                 padding: 15px;
                 margin-top: 20px;
                 font-size: 1.8em;
+            @include media('<=phone') {
+                padding: 10px;
+            }
             }
         }
     }
@@ -260,16 +326,20 @@ footer{
         flex-direction: column;
         align-items: center;
         border: none;
-        @media only screen and (max-width: 768px){
+        @include media('<=tablet') {
             width: 100%;
         }
         h5{
             padding: 50px;
             font-size: 28px;
-            @media only screen and (max-width: 992px){
-                padding: 30px;
-                font-size: 24px;
-            }
+        @include media('<=desktop') {
+            padding: 30px;
+            font-size: 24px;
+        }
+        @include media('<=phone') {
+            font-size: 20px;
+            margin-top: 20px;
+        }
         }
         input{
             height: 50px;
@@ -277,9 +347,14 @@ footer{
             text-align: center;
             font-size: 16px;
             background-color: rgba(255, 255, 255, 0.8);
-            @media only screen and (max-width: 992px){ 
+            @include media('<=desktop') {         
                 width: 420px;
-            }    
+            } 
+            @include media('<=phone') {
+                width: 250px;
+                font-size: 14px;
+                align-self: center;
+            }   
         }
         input#message{
             height: 150px;
@@ -296,6 +371,11 @@ footer{
             text-transform: uppercase;
             font-weight: 600;
             margin: 20px;
+            @include media('<=phone') {
+                padding: 12px;
+                letter-spacing: 0;
+                margin: 15px;
+            }
         }
         }
 }
